@@ -10,13 +10,40 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as QuizRouteImport } from './routes/quiz'
+import { Route as OfertaRouteImport } from './routes/oferta'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as QuizTrabalhoRouteImport } from './routes/quiz.trabalho'
 import { Route as QuizPesoRouteImport } from './routes/quiz.peso'
+import { Route as QuizPartesRouteImport } from './routes/quiz.partes'
+import { Route as QuizObjetivoRouteImport } from './routes/quiz.objetivo'
 import { Route as QuizNomeRouteImport } from './routes/quiz.nome'
+import { Route as QuizMotivacao2RouteImport } from './routes/quiz.motivacao-2'
+import { Route as QuizMotivacao1RouteImport } from './routes/quiz.motivacao-1'
+import { Route as QuizJejumRouteImport } from './routes/quiz.jejum'
+import { Route as QuizJantarRouteImport } from './routes/quiz.jantar'
+import { Route as QuizInsatisfacaoRouteImport } from './routes/quiz.insatisfacao'
+import { Route as QuizFdsRouteImport } from './routes/quiz.fds'
+import { Route as QuizExercicioRouteImport } from './routes/quiz.exercicio'
+import { Route as QuizEscadasRouteImport } from './routes/quiz.escadas'
+import { Route as QuizEducacionalRouteImport } from './routes/quiz.educacional'
+import { Route as QuizDietaRouteImport } from './routes/quiz.dieta'
+import { Route as QuizCozinhaRouteImport } from './routes/quiz.cozinha'
+import { Route as QuizCorpoDesejadoRouteImport } from './routes/quiz.corpo-desejado'
+import { Route as QuizCorpoAtualRouteImport } from './routes/quiz.corpo-atual'
+import { Route as QuizCaminhadaRouteImport } from './routes/quiz.caminhada'
+import { Route as QuizCafeRouteImport } from './routes/quiz.cafe'
+import { Route as QuizAtividadeRouteImport } from './routes/quiz.atividade'
+import { Route as QuizAnaliseRouteImport } from './routes/quiz.analise'
+import { Route as QuizAlmocoRouteImport } from './routes/quiz.almoco'
 
 const QuizRoute = QuizRouteImport.update({
   id: '/quiz',
   path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OfertaRoute = OfertaRouteImport.update({
+  id: '/oferta',
+  path: '/oferta',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -24,9 +51,24 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizTrabalhoRoute = QuizTrabalhoRouteImport.update({
+  id: '/trabalho',
+  path: '/trabalho',
+  getParentRoute: () => QuizRoute,
+} as any)
 const QuizPesoRoute = QuizPesoRouteImport.update({
   id: '/peso',
   path: '/peso',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizPartesRoute = QuizPartesRouteImport.update({
+  id: '/partes',
+  path: '/partes',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizObjetivoRoute = QuizObjetivoRouteImport.update({
+  id: '/objetivo',
+  path: '/objetivo',
   getParentRoute: () => QuizRoute,
 } as any)
 const QuizNomeRoute = QuizNomeRouteImport.update({
@@ -34,36 +76,272 @@ const QuizNomeRoute = QuizNomeRouteImport.update({
   path: '/nome',
   getParentRoute: () => QuizRoute,
 } as any)
+const QuizMotivacao2Route = QuizMotivacao2RouteImport.update({
+  id: '/motivacao-2',
+  path: '/motivacao-2',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizMotivacao1Route = QuizMotivacao1RouteImport.update({
+  id: '/motivacao-1',
+  path: '/motivacao-1',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizJejumRoute = QuizJejumRouteImport.update({
+  id: '/jejum',
+  path: '/jejum',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizJantarRoute = QuizJantarRouteImport.update({
+  id: '/jantar',
+  path: '/jantar',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizInsatisfacaoRoute = QuizInsatisfacaoRouteImport.update({
+  id: '/insatisfacao',
+  path: '/insatisfacao',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizFdsRoute = QuizFdsRouteImport.update({
+  id: '/fds',
+  path: '/fds',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizExercicioRoute = QuizExercicioRouteImport.update({
+  id: '/exercicio',
+  path: '/exercicio',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizEscadasRoute = QuizEscadasRouteImport.update({
+  id: '/escadas',
+  path: '/escadas',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizEducacionalRoute = QuizEducacionalRouteImport.update({
+  id: '/educacional',
+  path: '/educacional',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizDietaRoute = QuizDietaRouteImport.update({
+  id: '/dieta',
+  path: '/dieta',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizCozinhaRoute = QuizCozinhaRouteImport.update({
+  id: '/cozinha',
+  path: '/cozinha',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizCorpoDesejadoRoute = QuizCorpoDesejadoRouteImport.update({
+  id: '/corpo-desejado',
+  path: '/corpo-desejado',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizCorpoAtualRoute = QuizCorpoAtualRouteImport.update({
+  id: '/corpo-atual',
+  path: '/corpo-atual',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizCaminhadaRoute = QuizCaminhadaRouteImport.update({
+  id: '/caminhada',
+  path: '/caminhada',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizCafeRoute = QuizCafeRouteImport.update({
+  id: '/cafe',
+  path: '/cafe',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizAtividadeRoute = QuizAtividadeRouteImport.update({
+  id: '/atividade',
+  path: '/atividade',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizAnaliseRoute = QuizAnaliseRouteImport.update({
+  id: '/analise',
+  path: '/analise',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizAlmocoRoute = QuizAlmocoRouteImport.update({
+  id: '/almoco',
+  path: '/almoco',
+  getParentRoute: () => QuizRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/oferta': typeof OfertaRoute
   '/quiz': typeof QuizRouteWithChildren
+  '/quiz/almoco': typeof QuizAlmocoRoute
+  '/quiz/analise': typeof QuizAnaliseRoute
+  '/quiz/atividade': typeof QuizAtividadeRoute
+  '/quiz/cafe': typeof QuizCafeRoute
+  '/quiz/caminhada': typeof QuizCaminhadaRoute
+  '/quiz/corpo-atual': typeof QuizCorpoAtualRoute
+  '/quiz/corpo-desejado': typeof QuizCorpoDesejadoRoute
+  '/quiz/cozinha': typeof QuizCozinhaRoute
+  '/quiz/dieta': typeof QuizDietaRoute
+  '/quiz/educacional': typeof QuizEducacionalRoute
+  '/quiz/escadas': typeof QuizEscadasRoute
+  '/quiz/exercicio': typeof QuizExercicioRoute
+  '/quiz/fds': typeof QuizFdsRoute
+  '/quiz/insatisfacao': typeof QuizInsatisfacaoRoute
+  '/quiz/jantar': typeof QuizJantarRoute
+  '/quiz/jejum': typeof QuizJejumRoute
+  '/quiz/motivacao-1': typeof QuizMotivacao1Route
+  '/quiz/motivacao-2': typeof QuizMotivacao2Route
   '/quiz/nome': typeof QuizNomeRoute
+  '/quiz/objetivo': typeof QuizObjetivoRoute
+  '/quiz/partes': typeof QuizPartesRoute
   '/quiz/peso': typeof QuizPesoRoute
+  '/quiz/trabalho': typeof QuizTrabalhoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/oferta': typeof OfertaRoute
   '/quiz': typeof QuizRouteWithChildren
+  '/quiz/almoco': typeof QuizAlmocoRoute
+  '/quiz/analise': typeof QuizAnaliseRoute
+  '/quiz/atividade': typeof QuizAtividadeRoute
+  '/quiz/cafe': typeof QuizCafeRoute
+  '/quiz/caminhada': typeof QuizCaminhadaRoute
+  '/quiz/corpo-atual': typeof QuizCorpoAtualRoute
+  '/quiz/corpo-desejado': typeof QuizCorpoDesejadoRoute
+  '/quiz/cozinha': typeof QuizCozinhaRoute
+  '/quiz/dieta': typeof QuizDietaRoute
+  '/quiz/educacional': typeof QuizEducacionalRoute
+  '/quiz/escadas': typeof QuizEscadasRoute
+  '/quiz/exercicio': typeof QuizExercicioRoute
+  '/quiz/fds': typeof QuizFdsRoute
+  '/quiz/insatisfacao': typeof QuizInsatisfacaoRoute
+  '/quiz/jantar': typeof QuizJantarRoute
+  '/quiz/jejum': typeof QuizJejumRoute
+  '/quiz/motivacao-1': typeof QuizMotivacao1Route
+  '/quiz/motivacao-2': typeof QuizMotivacao2Route
   '/quiz/nome': typeof QuizNomeRoute
+  '/quiz/objetivo': typeof QuizObjetivoRoute
+  '/quiz/partes': typeof QuizPartesRoute
   '/quiz/peso': typeof QuizPesoRoute
+  '/quiz/trabalho': typeof QuizTrabalhoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/oferta': typeof OfertaRoute
   '/quiz': typeof QuizRouteWithChildren
+  '/quiz/almoco': typeof QuizAlmocoRoute
+  '/quiz/analise': typeof QuizAnaliseRoute
+  '/quiz/atividade': typeof QuizAtividadeRoute
+  '/quiz/cafe': typeof QuizCafeRoute
+  '/quiz/caminhada': typeof QuizCaminhadaRoute
+  '/quiz/corpo-atual': typeof QuizCorpoAtualRoute
+  '/quiz/corpo-desejado': typeof QuizCorpoDesejadoRoute
+  '/quiz/cozinha': typeof QuizCozinhaRoute
+  '/quiz/dieta': typeof QuizDietaRoute
+  '/quiz/educacional': typeof QuizEducacionalRoute
+  '/quiz/escadas': typeof QuizEscadasRoute
+  '/quiz/exercicio': typeof QuizExercicioRoute
+  '/quiz/fds': typeof QuizFdsRoute
+  '/quiz/insatisfacao': typeof QuizInsatisfacaoRoute
+  '/quiz/jantar': typeof QuizJantarRoute
+  '/quiz/jejum': typeof QuizJejumRoute
+  '/quiz/motivacao-1': typeof QuizMotivacao1Route
+  '/quiz/motivacao-2': typeof QuizMotivacao2Route
   '/quiz/nome': typeof QuizNomeRoute
+  '/quiz/objetivo': typeof QuizObjetivoRoute
+  '/quiz/partes': typeof QuizPartesRoute
   '/quiz/peso': typeof QuizPesoRoute
+  '/quiz/trabalho': typeof QuizTrabalhoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/quiz' | '/quiz/nome' | '/quiz/peso'
+  fullPaths:
+    | '/'
+    | '/oferta'
+    | '/quiz'
+    | '/quiz/almoco'
+    | '/quiz/analise'
+    | '/quiz/atividade'
+    | '/quiz/cafe'
+    | '/quiz/caminhada'
+    | '/quiz/corpo-atual'
+    | '/quiz/corpo-desejado'
+    | '/quiz/cozinha'
+    | '/quiz/dieta'
+    | '/quiz/educacional'
+    | '/quiz/escadas'
+    | '/quiz/exercicio'
+    | '/quiz/fds'
+    | '/quiz/insatisfacao'
+    | '/quiz/jantar'
+    | '/quiz/jejum'
+    | '/quiz/motivacao-1'
+    | '/quiz/motivacao-2'
+    | '/quiz/nome'
+    | '/quiz/objetivo'
+    | '/quiz/partes'
+    | '/quiz/peso'
+    | '/quiz/trabalho'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/quiz' | '/quiz/nome' | '/quiz/peso'
-  id: '__root__' | '/' | '/quiz' | '/quiz/nome' | '/quiz/peso'
+  to:
+    | '/'
+    | '/oferta'
+    | '/quiz'
+    | '/quiz/almoco'
+    | '/quiz/analise'
+    | '/quiz/atividade'
+    | '/quiz/cafe'
+    | '/quiz/caminhada'
+    | '/quiz/corpo-atual'
+    | '/quiz/corpo-desejado'
+    | '/quiz/cozinha'
+    | '/quiz/dieta'
+    | '/quiz/educacional'
+    | '/quiz/escadas'
+    | '/quiz/exercicio'
+    | '/quiz/fds'
+    | '/quiz/insatisfacao'
+    | '/quiz/jantar'
+    | '/quiz/jejum'
+    | '/quiz/motivacao-1'
+    | '/quiz/motivacao-2'
+    | '/quiz/nome'
+    | '/quiz/objetivo'
+    | '/quiz/partes'
+    | '/quiz/peso'
+    | '/quiz/trabalho'
+  id:
+    | '__root__'
+    | '/'
+    | '/oferta'
+    | '/quiz'
+    | '/quiz/almoco'
+    | '/quiz/analise'
+    | '/quiz/atividade'
+    | '/quiz/cafe'
+    | '/quiz/caminhada'
+    | '/quiz/corpo-atual'
+    | '/quiz/corpo-desejado'
+    | '/quiz/cozinha'
+    | '/quiz/dieta'
+    | '/quiz/educacional'
+    | '/quiz/escadas'
+    | '/quiz/exercicio'
+    | '/quiz/fds'
+    | '/quiz/insatisfacao'
+    | '/quiz/jantar'
+    | '/quiz/jejum'
+    | '/quiz/motivacao-1'
+    | '/quiz/motivacao-2'
+    | '/quiz/nome'
+    | '/quiz/objetivo'
+    | '/quiz/partes'
+    | '/quiz/peso'
+    | '/quiz/trabalho'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  OfertaRoute: typeof OfertaRoute
   QuizRoute: typeof QuizRouteWithChildren
 }
 
@@ -76,6 +354,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuizRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/oferta': {
+      id: '/oferta'
+      path: '/oferta'
+      fullPath: '/oferta'
+      preLoaderRoute: typeof OfertaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -83,11 +368,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quiz/trabalho': {
+      id: '/quiz/trabalho'
+      path: '/trabalho'
+      fullPath: '/quiz/trabalho'
+      preLoaderRoute: typeof QuizTrabalhoRouteImport
+      parentRoute: typeof QuizRoute
+    }
     '/quiz/peso': {
       id: '/quiz/peso'
       path: '/peso'
       fullPath: '/quiz/peso'
       preLoaderRoute: typeof QuizPesoRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/partes': {
+      id: '/quiz/partes'
+      path: '/partes'
+      fullPath: '/quiz/partes'
+      preLoaderRoute: typeof QuizPartesRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/objetivo': {
+      id: '/quiz/objetivo'
+      path: '/objetivo'
+      fullPath: '/quiz/objetivo'
+      preLoaderRoute: typeof QuizObjetivoRouteImport
       parentRoute: typeof QuizRoute
     }
     '/quiz/nome': {
@@ -97,23 +403,192 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof QuizNomeRouteImport
       parentRoute: typeof QuizRoute
     }
+    '/quiz/motivacao-2': {
+      id: '/quiz/motivacao-2'
+      path: '/motivacao-2'
+      fullPath: '/quiz/motivacao-2'
+      preLoaderRoute: typeof QuizMotivacao2RouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/motivacao-1': {
+      id: '/quiz/motivacao-1'
+      path: '/motivacao-1'
+      fullPath: '/quiz/motivacao-1'
+      preLoaderRoute: typeof QuizMotivacao1RouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/jejum': {
+      id: '/quiz/jejum'
+      path: '/jejum'
+      fullPath: '/quiz/jejum'
+      preLoaderRoute: typeof QuizJejumRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/jantar': {
+      id: '/quiz/jantar'
+      path: '/jantar'
+      fullPath: '/quiz/jantar'
+      preLoaderRoute: typeof QuizJantarRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/insatisfacao': {
+      id: '/quiz/insatisfacao'
+      path: '/insatisfacao'
+      fullPath: '/quiz/insatisfacao'
+      preLoaderRoute: typeof QuizInsatisfacaoRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/fds': {
+      id: '/quiz/fds'
+      path: '/fds'
+      fullPath: '/quiz/fds'
+      preLoaderRoute: typeof QuizFdsRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/exercicio': {
+      id: '/quiz/exercicio'
+      path: '/exercicio'
+      fullPath: '/quiz/exercicio'
+      preLoaderRoute: typeof QuizExercicioRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/escadas': {
+      id: '/quiz/escadas'
+      path: '/escadas'
+      fullPath: '/quiz/escadas'
+      preLoaderRoute: typeof QuizEscadasRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/educacional': {
+      id: '/quiz/educacional'
+      path: '/educacional'
+      fullPath: '/quiz/educacional'
+      preLoaderRoute: typeof QuizEducacionalRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/dieta': {
+      id: '/quiz/dieta'
+      path: '/dieta'
+      fullPath: '/quiz/dieta'
+      preLoaderRoute: typeof QuizDietaRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/cozinha': {
+      id: '/quiz/cozinha'
+      path: '/cozinha'
+      fullPath: '/quiz/cozinha'
+      preLoaderRoute: typeof QuizCozinhaRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/corpo-desejado': {
+      id: '/quiz/corpo-desejado'
+      path: '/corpo-desejado'
+      fullPath: '/quiz/corpo-desejado'
+      preLoaderRoute: typeof QuizCorpoDesejadoRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/corpo-atual': {
+      id: '/quiz/corpo-atual'
+      path: '/corpo-atual'
+      fullPath: '/quiz/corpo-atual'
+      preLoaderRoute: typeof QuizCorpoAtualRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/caminhada': {
+      id: '/quiz/caminhada'
+      path: '/caminhada'
+      fullPath: '/quiz/caminhada'
+      preLoaderRoute: typeof QuizCaminhadaRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/cafe': {
+      id: '/quiz/cafe'
+      path: '/cafe'
+      fullPath: '/quiz/cafe'
+      preLoaderRoute: typeof QuizCafeRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/atividade': {
+      id: '/quiz/atividade'
+      path: '/atividade'
+      fullPath: '/quiz/atividade'
+      preLoaderRoute: typeof QuizAtividadeRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/analise': {
+      id: '/quiz/analise'
+      path: '/analise'
+      fullPath: '/quiz/analise'
+      preLoaderRoute: typeof QuizAnaliseRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/almoco': {
+      id: '/quiz/almoco'
+      path: '/almoco'
+      fullPath: '/quiz/almoco'
+      preLoaderRoute: typeof QuizAlmocoRouteImport
+      parentRoute: typeof QuizRoute
+    }
   }
 }
 
 interface QuizRouteChildren {
+  QuizAlmocoRoute: typeof QuizAlmocoRoute
+  QuizAnaliseRoute: typeof QuizAnaliseRoute
+  QuizAtividadeRoute: typeof QuizAtividadeRoute
+  QuizCafeRoute: typeof QuizCafeRoute
+  QuizCaminhadaRoute: typeof QuizCaminhadaRoute
+  QuizCorpoAtualRoute: typeof QuizCorpoAtualRoute
+  QuizCorpoDesejadoRoute: typeof QuizCorpoDesejadoRoute
+  QuizCozinhaRoute: typeof QuizCozinhaRoute
+  QuizDietaRoute: typeof QuizDietaRoute
+  QuizEducacionalRoute: typeof QuizEducacionalRoute
+  QuizEscadasRoute: typeof QuizEscadasRoute
+  QuizExercicioRoute: typeof QuizExercicioRoute
+  QuizFdsRoute: typeof QuizFdsRoute
+  QuizInsatisfacaoRoute: typeof QuizInsatisfacaoRoute
+  QuizJantarRoute: typeof QuizJantarRoute
+  QuizJejumRoute: typeof QuizJejumRoute
+  QuizMotivacao1Route: typeof QuizMotivacao1Route
+  QuizMotivacao2Route: typeof QuizMotivacao2Route
   QuizNomeRoute: typeof QuizNomeRoute
+  QuizObjetivoRoute: typeof QuizObjetivoRoute
+  QuizPartesRoute: typeof QuizPartesRoute
   QuizPesoRoute: typeof QuizPesoRoute
+  QuizTrabalhoRoute: typeof QuizTrabalhoRoute
 }
 
 const QuizRouteChildren: QuizRouteChildren = {
+  QuizAlmocoRoute: QuizAlmocoRoute,
+  QuizAnaliseRoute: QuizAnaliseRoute,
+  QuizAtividadeRoute: QuizAtividadeRoute,
+  QuizCafeRoute: QuizCafeRoute,
+  QuizCaminhadaRoute: QuizCaminhadaRoute,
+  QuizCorpoAtualRoute: QuizCorpoAtualRoute,
+  QuizCorpoDesejadoRoute: QuizCorpoDesejadoRoute,
+  QuizCozinhaRoute: QuizCozinhaRoute,
+  QuizDietaRoute: QuizDietaRoute,
+  QuizEducacionalRoute: QuizEducacionalRoute,
+  QuizEscadasRoute: QuizEscadasRoute,
+  QuizExercicioRoute: QuizExercicioRoute,
+  QuizFdsRoute: QuizFdsRoute,
+  QuizInsatisfacaoRoute: QuizInsatisfacaoRoute,
+  QuizJantarRoute: QuizJantarRoute,
+  QuizJejumRoute: QuizJejumRoute,
+  QuizMotivacao1Route: QuizMotivacao1Route,
+  QuizMotivacao2Route: QuizMotivacao2Route,
   QuizNomeRoute: QuizNomeRoute,
+  QuizObjetivoRoute: QuizObjetivoRoute,
+  QuizPartesRoute: QuizPartesRoute,
   QuizPesoRoute: QuizPesoRoute,
+  QuizTrabalhoRoute: QuizTrabalhoRoute,
 }
 
 const QuizRouteWithChildren = QuizRoute._addFileChildren(QuizRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  OfertaRoute: OfertaRoute,
   QuizRoute: QuizRouteWithChildren,
 }
 export const routeTree = rootRouteImport

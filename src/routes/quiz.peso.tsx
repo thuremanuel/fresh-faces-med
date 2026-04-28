@@ -1,36 +1,21 @@
-import { createFileRoute, useNavigate } from "@tanstack/react-router";
-import { QuizShell } from "@/components/quiz/QuizShell";
-import { QuestionTitle } from "@/components/quiz/QuestionTitle";
-import { saveQuiz } from "@/lib/quiz-store";
+import { createFileRoute } from "@tanstack/react-router";
+import { OptionStep } from "@/components/quiz/OptionStep";
 
 export const Route = createFileRoute("/quiz/peso")({
-  component: PesoPage,
+  component: () => (
+    <OptionStep
+      progress={0.08}
+      backTo="/quiz/nome"
+      nextTo="/quiz/objetivo"
+      field="weightToLose"
+      title="Quantos kg gostaria de eliminar?"
+      options={[
+        { value: "ate-5", label: "Até 5kg" },
+        { value: "5-10", label: "de 5 a 10kg" },
+        { value: "10-20", label: "de 10 a 20kg" },
+        { value: "20-40", label: "de 20 a 40kg" },
+      ]}
+      layout="grid"
+    />
+  ),
 });
-
-const OPTIONS = ["Até 5kg", "de 5 a 10kg", "de 10 a 20kg", "de 20 a 40kg"];
-
-function PesoPage() {
-  const navigate = useNavigate();
-  const choose = (v: string) => {
-    saveQuiz({ weightToLose: v });
-    navigate({ to: "/" }); // TODO: ligar próximas etapas
-  };
-
-  return (
-    <QuizShell progress={0.1} backTo="/quiz/nome">
-      <QuestionTitle>Quantos kg gostaria de eliminar?</QuestionTitle>
-      <div className="grid grid-cols-2 gap-3">
-        {OPTIONS.map((opt) => (
-          <button
-            key={opt}
-            onClick={() => choose(opt)}
-            className="quiz-option quiz-option--outline justify-start"
-          >
-            <span className="quiz-option__radio" />
-            <span>{opt}</span>
-          </button>
-        ))}
-      </div>
-    </QuizShell>
-  );
-}
