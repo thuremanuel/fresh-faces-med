@@ -9,38 +9,73 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as QuizRouteImport } from './routes/quiz'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as QuizPesoRouteImport } from './routes/quiz.peso'
+import { Route as QuizNomeRouteImport } from './routes/quiz.nome'
 
+const QuizRoute = QuizRouteImport.update({
+  id: '/quiz',
+  path: '/quiz',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const QuizPesoRoute = QuizPesoRouteImport.update({
+  id: '/peso',
+  path: '/peso',
+  getParentRoute: () => QuizRoute,
+} as any)
+const QuizNomeRoute = QuizNomeRouteImport.update({
+  id: '/nome',
+  path: '/nome',
+  getParentRoute: () => QuizRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/quiz': typeof QuizRouteWithChildren
+  '/quiz/nome': typeof QuizNomeRoute
+  '/quiz/peso': typeof QuizPesoRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/quiz': typeof QuizRouteWithChildren
+  '/quiz/nome': typeof QuizNomeRoute
+  '/quiz/peso': typeof QuizPesoRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/quiz': typeof QuizRouteWithChildren
+  '/quiz/nome': typeof QuizNomeRoute
+  '/quiz/peso': typeof QuizPesoRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/quiz' | '/quiz/nome' | '/quiz/peso'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/quiz' | '/quiz/nome' | '/quiz/peso'
+  id: '__root__' | '/' | '/quiz' | '/quiz/nome' | '/quiz/peso'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  QuizRoute: typeof QuizRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/quiz': {
+      id: '/quiz'
+      path: '/quiz'
+      fullPath: '/quiz'
+      preLoaderRoute: typeof QuizRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -48,11 +83,38 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/quiz/peso': {
+      id: '/quiz/peso'
+      path: '/peso'
+      fullPath: '/quiz/peso'
+      preLoaderRoute: typeof QuizPesoRouteImport
+      parentRoute: typeof QuizRoute
+    }
+    '/quiz/nome': {
+      id: '/quiz/nome'
+      path: '/nome'
+      fullPath: '/quiz/nome'
+      preLoaderRoute: typeof QuizNomeRouteImport
+      parentRoute: typeof QuizRoute
+    }
   }
 }
 
+interface QuizRouteChildren {
+  QuizNomeRoute: typeof QuizNomeRoute
+  QuizPesoRoute: typeof QuizPesoRoute
+}
+
+const QuizRouteChildren: QuizRouteChildren = {
+  QuizNomeRoute: QuizNomeRoute,
+  QuizPesoRoute: QuizPesoRoute,
+}
+
+const QuizRouteWithChildren = QuizRoute._addFileChildren(QuizRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  QuizRoute: QuizRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
