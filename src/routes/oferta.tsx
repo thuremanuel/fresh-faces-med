@@ -4,6 +4,11 @@ import { loadQuiz } from "@/lib/quiz-store";
 import specialist from "@/assets/specialist-profile.jpg";
 import t1 from "@/assets/testimonial-1.jpg";
 import t2 from "@/assets/testimonial-2.jpg";
+import t3 from "@/assets/testimonial-3.jpg";
+import t4 from "@/assets/testimonial-4.jpg";
+import t5 from "@/assets/testimonial-5.jpg";
+
+const CHECKOUT_URL = "https://compraseguraonline.org.ua/c/4ae0ce1c08";
 
 export const Route = createFileRoute("/oferta")({
   head: () => ({
@@ -85,10 +90,10 @@ function OfferPage() {
         <section className="bg-card border-2 border-primary rounded-3xl p-6 text-center space-y-3 shadow-[var(--shadow-soft)]">
           <p className="text-sm text-muted-foreground line-through">De R$ 297,00</p>
           <p className="text-5xl font-display font-extrabold text-primary">
-            R$ 27<span className="text-2xl">,90</span>
+            R$ 19<span className="text-2xl">,90</span>
           </p>
-          <p className="text-xs text-muted-foreground">ou 3x de R$ 9,90 sem juros</p>
-          <button className="quiz-cta text-lg">QUERO MEU PLANO AGORA</button>
+          <p className="text-xs text-muted-foreground">ou 3x de R$ 6,90 sem juros</p>
+          <a href={CHECKOUT_URL} className="quiz-cta text-lg inline-block">QUERO MEU PLANO AGORA</a>
           <p className="text-xs text-muted-foreground">🔒 Pagamento 100% seguro · Garantia de 7 dias</p>
         </section>
 
@@ -97,6 +102,10 @@ function OfferPage() {
           {[
             { img: t1, name: "Cláudia, 52 anos", text: "Eliminei 6kg no primeiro mês! Voltei a usar minhas roupas antigas." },
             { img: t2, name: "Regina, 48 anos", text: "A barriga da menopausa simplesmente foi embora. Plano fácil de seguir." },
+            { img: t3, name: "Sandra, 55 anos", text: "Em 7 dias já notei a diferença! Desinchei e voltei a ter energia para brincar com meus netos." },
+            { img: t4, name: "Beatriz, 50 anos", text: "Perdi 8kg em 2 meses. Os calorões diminuíram muito e durmo melhor à noite." },
+            { img: t5, name: "Lúcia, 58 anos", text: "Achei que nunca mais ia conseguir emagrecer. A Dra. Marina mudou minha vida!" },
+            { img: t1, name: "Helena, 54 anos", text: "Plano simples, comida gostosa e resultado rápido. Já indiquei para todas as amigas!" },
           ].map((t) => (
             <div key={t.name} className="bg-secondary rounded-2xl p-4 flex gap-4">
               <img src={t.img} alt={t.name} className="w-16 h-16 rounded-full object-cover flex-shrink-0" />
@@ -109,7 +118,7 @@ function OfferPage() {
         </section>
 
         <section className="text-center pt-4 pb-8">
-          <button className="quiz-cta">QUERO MEU PLANO POR R$ 27,90</button>
+          <a href={CHECKOUT_URL} className="quiz-cta inline-block">QUERO MEU PLANO POR R$ 19,90</a>
         </section>
       </main>
     </div>
