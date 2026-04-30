@@ -29,14 +29,18 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Estrategia ideal | emagrecer" },
+      { name: "description", content: "Fresh Faces Med rebuilds a website, replicating its structure, content, and user flow while updating human imagery and pricing." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Estrategia ideal | emagrecer" },
+      { property: "og:description", content: "Fresh Faces Med rebuilds a website, replicating its structure, content, and user flow while updating human imagery and pricing." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Estrategia ideal | emagrecer" },
+      { name: "twitter:description", content: "Fresh Faces Med rebuilds a website, replicating its structure, content, and user flow while updating human imagery and pricing." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a7601325-bdd7-4dfc-9ac4-4353cbfea4c0/id-preview-b25499a1--5c7f710f-1799-4037-9439-cace6e5b9cbb.lovable.app-1777469154923.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/a7601325-bdd7-4dfc-9ac4-4353cbfea4c0/id-preview-b25499a1--5c7f710f-1799-4037-9439-cace6e5b9cbb.lovable.app-1777469154923.png" },
     ],
     links: [
       {
